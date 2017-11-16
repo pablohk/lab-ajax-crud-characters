@@ -43,10 +43,10 @@ deleteOneRegister (id) {
 }
 
 createOneRegister (item) {
-  this.fillItem(item);
   $.ajax({
     method: 'POST',
     url:this.BASE_URL+"/characters",
+    data:item,
   }).then(data =>{
     return data;
   }).catch(err=>{console.log(err.responseText);});

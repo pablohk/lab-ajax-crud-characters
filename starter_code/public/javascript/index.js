@@ -49,11 +49,12 @@ $(document).ready(() => {
 
   $('#new-character-form').on('submit', (e) => {
     e.preventDefault();
+
     let obj ={
-      name: "ultimo",
-      occupation:"ultimo",
-      debt:true,
-      weapon: "ultimo"
+      name: $("#new-character-form div:nth-child(1) input" ).val(),
+      occupation:$("#new-character-form div:nth-child(2) input" ).val(),
+      debt:$("#new-character-form div:nth-child(4) input" ).is(':checked'),
+      weapon: $("#new-character-form div:nth-child(3) input" ).val()
     };
    console.log(obj);
    charactersAPI.createOneRegister(obj);
